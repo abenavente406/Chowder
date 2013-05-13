@@ -1,0 +1,12 @@
+C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\bin\x86\Debug\GameHelperLibrary.dll
+C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\bin\x86\Debug\GameHelperLibrary.pdb
+C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\obj\x86\Debug\GameHelperLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\obj\x86\Debug\GameHelperLibrary.dll
+C:\Users\Anthony Benavente\Git\UnnamedRpg\GameHelperLibrary\obj\x86\Debug\GameHelperLibrary.pdb
+C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Chowder\GameHelperLibrary\bin\x86\Debug\GameHelperLibrary.dll
+C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Chowder\GameHelperLibrary\bin\x86\Debug\GameHelperLibrary.pdb
+C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Chowder\GameHelperLibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Chowder\GameHelperLibrary\obj\x86\Debug\GameHelperLibrary.dll
+C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Chowder\GameHelperLibrary\obj\x86\Debug\GameHelperLibrary.pdb
+C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Chowder\GameHelperLibrary\obj\x86\Debug\GameHelperLibrary.csprojResolveAssemblyReference.cache
