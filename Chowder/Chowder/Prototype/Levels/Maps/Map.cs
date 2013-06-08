@@ -22,6 +22,8 @@ namespace Chowder.Prototype.Levels.Maps
         private Tile[,] tiles;
         private string path = "";
         private List<Tile> tileList = new List<Tile>();
+
+        List<Platform> testPlatforms = new List<Platform>();
         #endregion
 
         #region Properties
@@ -33,6 +35,16 @@ namespace Chowder.Prototype.Levels.Maps
         public int Height
         {
             get { return height; }
+        }
+
+        public int WidthInTiles
+        {
+            get { return width / tileWidth; }
+        }
+
+        public int HeightInTiles
+        {
+            get { return height / tileHeight; }
         }
 
         public int TileWidth
@@ -59,6 +71,11 @@ namespace Chowder.Prototype.Levels.Maps
         {
             get { return new Vector2(ProjectData.GAMEHEIGHT - TileHeight); }
         }
+
+        public List<Platform> TestPlatforms
+        {
+            get { return testPlatforms; }
+        }
         #endregion
 
         #region Initialization
@@ -69,16 +86,16 @@ namespace Chowder.Prototype.Levels.Maps
 
         public Map(int width, int height)
         {
-            this.width = width;
-            this.height = height;
-            Initialize(width, height);
+            this.width = width * tileWidth;
+            this.height = height * tileHeight;
+            Initialize(WidthInTiles, HeightInTiles);
         }
 
         public Map(int[,] data)
         {
-            this.width = data.GetLength(0);
-            this.height = data.GetLength(1);
-            Initialize(width, height);
+            this.width = data.GetLength(0) * tileWidth;
+            this.height = data.GetLength(1) * tileHeight;
+            Initialize(WidthInTiles, HeightInTiles);
         }
 
         public Map(string path)
@@ -86,6 +103,7 @@ namespace Chowder.Prototype.Levels.Maps
             this.path = path;
             Initialize();
             BuildMap(new MapParser(path).ParseMap());
+            
         }
 
         private void Initialize(int width = 0, int height = 0)
@@ -98,15 +116,22 @@ namespace Chowder.Prototype.Levels.Maps
             tileList.Add(AIR_TILE);
             tileList.Add(FLOOR_TILE);
             tileList.Add(BLOCK_TILE);
+
+            testPlatforms.Add(new MovingPlatform(new Point(0, 4), new Point(3, 1), 4, MovementType.HORIZONTAL_RIGHT));
+            testPlatforms.Add(new MovingPlatform(new Point(3, 6), new Point(3, 1), 4, MovementType.HORIZONTAL_LEFT));
+            testPlatforms.Add(new MovingPlatform(new Point(8, 4), new Point(3, 1), 2, MovementType.VERTICAL_DOWN));
+            testPlatforms.Add(new MovingPlatform(new Point(12, 4), new Point(3, 1), 2, MovementType.VERTICAL_UP));
+            testPlatforms.Add(new StaticPlatform(new Point(16, 4), new Point(3, 1)));
+
             if (width == 0 | height == 0)
                 return;
 
-            tiles = new Tile[width, height];
+            tiles = new Tile[WidthInTiles, HeightInTiles];
 
             // Default map creation
-            for (int x = 0; x < width; x++)
+            for (int x = 0; x < WidthInTiles; x++)
             {
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < HeightInTiles; y++)
                 {
                     tiles[x, y] = AIR_TILE;
                     if (y == ProjectData.GAMEHEIGHT / tileHeight - 1)
@@ -128,13 +153,13 @@ namespace Chowder.Prototype.Levels.Maps
 
         private void BuildMap(int[,] data)
         {
-            width = data.GetLength(0);
-            height = data.GetLength(1);
-            tiles = new Tile[width, height];
-            // TODO: Build a map based on an array made from a txt file
-            for (int x = 0; x < width; x++)
+            width = data.GetLength(0) * tileWidth;
+            height = data.GetLength(1) * tileHeight;
+            tiles = new Tile[WidthInTiles, HeightInTiles];
+
+            for (int x = 0; x < WidthInTiles; x++)
             {
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < HeightInTiles; y++)
                 {
                     tiles[x, y] = tileList[data[x, y]];
                 }
@@ -145,17 +170,23 @@ namespace Chowder.Prototype.Levels.Maps
         #region Update and Draw
         public void Update(GameTime gameTime)
         {
-
+            foreach (Platform p in testPlatforms)
+                p.Update(gameTime);
         }
 
         public void Draw(SpriteBatch batch, GameTime gameTime)
         {
-            for (int x = 0; x < width; x++)
-                for (int y = 0; y < height; y++)
+            for (int x = 0; x < WidthInTiles; x++)
+            {
+                for (int y = 0; y < HeightInTiles; y++)
                 {
                     var currTile = tiles[x, y];
                     batch.Draw(currTile.Texture, new Vector2(x * tileWidth, y * tileHeight), (Color)currTile.Tint);
                 }
+            }
+
+            foreach (Platform p in testPlatforms)
+                p.Draw(batch, gameTime);
         }
         #endregion
     }

@@ -7,3 +7,16 @@ C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Chowder\Chowder
 C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Chowder\Chowder\Chowder\obj\x86\Debug\Chowder.exe
 C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Chowder\Chowder\Chowder\obj\x86\Debug\Chowder.pdb
 C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Chowder\Chowder\Chowder\bin\x86\Debug\Content\menuFont.xnb
+C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\bin\x86\Debug\Content\menuFont.xnb
+C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\bin\x86\Debug\Chowder.exe
+C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\bin\x86\Debug\Chowder.pdb
+C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\bin\x86\Debug\GameHelperLibrary.dll
+C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\bin\x86\Debug\GameHelperLibrary.pdb
+C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\obj\x86\Debug\Chowder.csprojResolveAssemblyReference.cache
+C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\obj\x86\Debug\Chowder.exe
+C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\obj\x86\Debug\Chowder.pdb
+C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\bin\x86\Debug\Content\megamanJump.xnb
+C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\bin\x86\Debug\Content\megamanRun.xnb
+C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\bin\x86\Debug\Content\megaman.xnb
+C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\bin\x86\Debug\Content\koopa.xnb

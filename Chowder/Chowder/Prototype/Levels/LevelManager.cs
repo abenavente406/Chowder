@@ -23,7 +23,7 @@ namespace Chowder.Prototype.Levels
 
         public LevelManager()
         {
-            currentMap = new Map(@"C:\Users\Anthony Benavente\Desktop\test_map.txt");
+            currentMap = new Map(@".\test_map.txt");
             em = new EntityManager();
         }
 
@@ -43,13 +43,55 @@ namespace Chowder.Prototype.Levels
         {
             return new Point((int)vec.X / CurrentMap.TileWidth, (int)vec.Y / CurrentMap.TileHeight);
         }
-
-        public static bool IsWalkable(Point pos)
+        public static int XToTile(float x)
         {
-            if (pos.X < 0) return false;
-            if (pos.X > currentMap.Width) return false;
+            return (int)x / currentMap.TileWidth;
+        }
+        public static int YToTile(float y)
+        {
+            return (int)y / currentMap.TileHeight;
+        }
 
-            return currentMap.Tiles[pos.X, pos.Y].Walkable;
+        public static bool IsSolidTile(float x, float y, int width, int height)
+        {
+            int atx1 = (int)(x / currentMap.TileWidth);
+            int atx2 = (int)(x + width) / currentMap.TileWidth;
+            int aty1 = (int)(y / currentMap.TileHeight);
+            int aty2 = (int)(y + height) / currentMap.TileHeight;
+
+            if (atx1 < 0 || aty1 < 0 || atx2 >= currentMap.Width / currentMap.TileWidth ||
+                aty2 >= currentMap.Height / currentMap.TileHeight)
+            {
+                return true;
+            }
+
+            if (IsTileBlocked(atx1, aty1))
+                return true;
+            if (IsTileBlocked(atx1, aty2))
+                return true;
+            if (IsTileBlocked(atx2, aty1))
+                return true;
+            if (IsTileBlocked(atx2, aty2))
+                return true;
+
+            return false;
+        }
+
+        public static bool IsTileBlocked(int x, int y)
+        {
+            if (y >= currentMap.Tiles.GetLength(1) || x >= currentMap.Tiles.GetLength(0))
+                return true;
+
+            return currentMap.Tiles[x, y].Solid;
+        }
+
+        public static bool PlatformThere(Rectangle bounds)
+        {
+            foreach (Platform p in currentMap.TestPlatforms)
+            {
+                if (p.Bounds.Intersects(bounds)) return true;
+            }
+            return false;
         }
     }
 }

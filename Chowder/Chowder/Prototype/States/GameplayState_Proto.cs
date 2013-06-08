@@ -29,8 +29,8 @@ namespace Chowder.Prototype.States
 
         public override void Initialize()
         {
-            camera = new Camera(Vector2.Zero + new Vector2(ProjectData.GAMEWIDTH / 2, ProjectData.GAMEHEIGHT / 2), ProjectData.GAMEWIDTH, ProjectData.GAMEHEIGHT);
-
+            camera = new Camera(Vector2.Zero + new Vector2(ProjectData.GAMEWIDTH / 2, ProjectData.GAMEHEIGHT / 2),
+                ProjectData.GAMEWIDTH, ProjectData.GAMEHEIGHT);
             base.Initialize();
         }
 

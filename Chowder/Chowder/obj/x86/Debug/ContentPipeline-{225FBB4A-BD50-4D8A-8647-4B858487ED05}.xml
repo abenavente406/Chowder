@@ -7,8 +7,44 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Chowder\Chowder\Chowder\bin\x86\Debug\Content\menuFont.xnb</Output>
+      <Output>C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\bin\x86\Debug\Content\menuFont.xnb</Output>
       <Time>2013-05-01T18:04:15.3935985-04:00</Time>
+    </Item>
+    <Item>
+      <Source>megamanJump.PNG</Source>
+      <Name>megamanJump</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\bin\x86\Debug\Content\megamanJump.xnb</Output>
+      <Time>2013-05-14T11:34:41.5665488-04:00</Time>
+    </Item>
+    <Item>
+      <Source>megamanRun.png</Source>
+      <Name>megamanRun</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\bin\x86\Debug\Content\megamanRun.xnb</Output>
+      <Time>2013-05-14T11:42:11.2712704-04:00</Time>
+    </Item>
+    <Item>
+      <Source>megaman.png</Source>
+      <Name>megaman</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\bin\x86\Debug\Content\megaman.xnb</Output>
+      <Time>2013-05-14T11:48:35.866268-04:00</Time>
+    </Item>
+    <Item>
+      <Source>koopa.png</Source>
+      <Name>koopa</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\bin\x86\Debug\Content\koopa.xnb</Output>
+      <Time>2013-05-16T22:19:10.9932735-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -17,10 +53,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Chowder\Chowder\ChowderContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Chowder\Chowder\Chowder\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Chowder\Chowder\Chowder\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Anthony Benavente\Documents\Visual Studio 2010\Projects\Chowder\Chowder\Chowder\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Anthony Benavente\Git\Chowder\Chowder\ChowderContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Anthony Benavente\Git\Chowder\Chowder\Chowder\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

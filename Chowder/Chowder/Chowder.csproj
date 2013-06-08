@@ -77,12 +77,17 @@
   <ItemGroup>
     <Compile Include="Camera.cs" />
     <Compile Include="ProjectData.cs" />
+    <Compile Include="Prototype\Entities\Enemy.cs" />
     <Compile Include="Prototype\Entities\Entity.cs" />
     <Compile Include="Prototype\Entities\EntityManager.cs" />
+    <Compile Include="Prototype\Entities\Koopa.cs" />
     <Compile Include="Prototype\Entities\Player.cs" />
     <Compile Include="Prototype\Levels\LevelManager.cs" />
     <Compile Include="Prototype\Levels\Maps\Map.cs" />
     <Compile Include="Prototype\Levels\Maps\MapParser.cs" />
+    <Compile Include="Prototype\Levels\Maps\MovingPlatform.cs" />
+    <Compile Include="Prototype\Levels\Maps\Platform.cs" />
+    <Compile Include="Prototype\Levels\Maps\StaticPlatform.cs" />
     <Compile Include="Prototype\Levels\Maps\Tile.cs" />
     <Compile Include="States\BaseGameState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

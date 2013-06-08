@@ -9,20 +9,21 @@ using Chowder.Prototype.Levels;
 
 namespace Chowder.Prototype.Entities
 {
-    public enum Directions : byte { West, East}
+    public enum Directions{ West = -1, East = 1}
     public abstract class Entity
     {
-        protected static Vector2 MAXSPEED = new Vector2(8, 8);
+        protected static Vector2 MAXSPEED = new Vector2(6, 6);
 
         #region Fields
         protected Vector2 pos = Vector2.Zero;
-        protected byte dir = (byte)Directions.East;
+        protected Directions dir = Directions.East;
         protected Vector2 velocity = Vector2.Zero;
         protected Vector2 acceleration = Vector2.Zero;
         protected float width = 0;
         protected float height = 0;
         protected Image imgLeft, imgRight;
         protected Animation movLeft, movRight;
+        protected Animation jumpRight;
         protected bool isMoving = false;
         protected bool isJumping = false;
         #endregion
@@ -39,7 +40,7 @@ namespace Chowder.Prototype.Entities
             get { return LevelManager.Vector2toTile(Position); }
         }
 
-        public byte Direction
+        public Directions Direction
         {
             get { return dir; }
             set { dir = value; }
@@ -79,6 +80,11 @@ namespace Chowder.Prototype.Entities
             get { return isMoving; }
             set { isMoving = true; }
         }
+
+        public Rectangle Bounds
+        {
+            get { return new Rectangle((int)pos.X, (int)pos.Y, (int)width, (int)height); }
+        }
         #endregion
 
         #region Initialization
@@ -94,48 +100,36 @@ namespace Chowder.Prototype.Entities
         public abstract void Update(GameTime gameTime);
         public virtual void Draw(SpriteBatch batch, GameTime gameTime)
         {
-            switch (dir)
+            switch (Direction)
             {
-                case (byte)Directions.West:
-                    imgLeft.Draw(batch, Position);
+                case Directions.East:
+                    movRight.Draw(batch, gameTime, Position);
                     break;
-                case (byte)Directions.East:
-                    imgRight.Draw(batch, Position);
+                case Directions.West:
+                    movRight.Draw(batch, gameTime, Position, true);
                     break;
             }
+
         }
         #endregion
 
         #region Movement Methods
-        protected void Move(Vector2 pos)
+        protected virtual void Move(Vector2 newPos)
         {
-            var testPos = new Vector2(pos.X - Width, pos.Y);
-            Point newGridPos = new Point(0, 0);
+            if (!LevelManager.IsSolidTile(newPos.X, Position.Y, (int)width, (int)height) &&
+                !LevelManager.PlatformThere(new Rectangle((int)newPos.X, (int)Position.Y, (int)width, (int)height)))
+                pos.X = newPos.X;
 
-            switch (dir)
-            {
-                case 0:
-                    newGridPos = new Point(GridPos.X - 1, GridPos.Y);
-                    break;
-                case 1:
-                    newGridPos = new Point(GridPos.X + 1, GridPos.Y);
-                    break;
-            }
-
-            if (true)//!LevelManager.IsWalkable(newGridPos))
-            {
-                isMoving = true;
-                Position = pos;
-            }
-            //else
-            //{
-            //    isMoving = false;
-            //}
+            if (!LevelManager.IsSolidTile(Position.X, newPos.Y, (int)width, (int)height) &&
+                !LevelManager.PlatformThere(new Rectangle((int)Position.X, (int)newPos.Y, (int)width, (int)height)))
+                pos.Y = newPos.Y;
+            else
+                velocity.Y = 0;
         }
 
         protected void Jump()
         {
-            ApplyForce(new Vector2(0, -6.5f));
+            ApplyForce(new Vector2(0, -6.75f));
         }
 
         protected void ApplyForce(Vector2 force)

@@ -35,7 +35,7 @@ namespace Chowder.Prototype.Levels.Maps
             get { return new Point(width, height); }
         }
 
-        public bool Walkable
+        public bool Solid
         {
             get { return isWalkable; }
             set { isWalkable = true; }
